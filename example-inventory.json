@@ -1,0 +1,19 @@
+{
+  "workspace": "acme",
+  "exported": "2026-10-21",
+  "agents": [
+    {
+      "name": "support",
+      "purpose": "Answer customer email with the order history in front of it",
+      "apps": ["stripe", "gmail"],
+      "approvals": [
+        { "match": "stripe.refund", "action": "require_approval" },
+        { "match": "gmail.send_email", "action": "require_approval" }
+      ]
+    },
+    {
+      "name": "research",
+      "apps": ["notion"]
+    }
+  ]
+}
